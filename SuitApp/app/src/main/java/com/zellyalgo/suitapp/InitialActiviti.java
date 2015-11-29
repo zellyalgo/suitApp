@@ -11,6 +11,7 @@ public class InitialActiviti extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_initial_activiti);
+        getSupportActionBar().hide();
     }
 
 
