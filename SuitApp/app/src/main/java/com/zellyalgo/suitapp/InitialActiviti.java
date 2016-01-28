@@ -1,11 +1,14 @@
 package com.zellyalgo.suitapp;
 
-import android.support.v7.app.AppCompatActivity;
+import android.content.Intent;
 import android.os.Bundle;
-import android.view.Menu;
-import android.view.MenuItem;
+import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
+import android.view.View;
 
 public class InitialActiviti extends AppCompatActivity {
+
+    private static String APP_TAG = "SuitApp";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -14,5 +17,16 @@ public class InitialActiviti extends AppCompatActivity {
         getSupportActionBar().hide();
     }
 
+    public void createOutfit (View view){
+        Log.d(APP_TAG, "CREATEE");
+        Intent intent = new Intent(this, CreateOutfit.class);
+        startActivity(intent);
+    }
+
+    public void openDesk (View view){
+        Log.d(APP_TAG, "DESK");
+        Intent intent = new Intent(this, CreateOutfit.class);
+        startActivity(intent);
+    }
 
 }

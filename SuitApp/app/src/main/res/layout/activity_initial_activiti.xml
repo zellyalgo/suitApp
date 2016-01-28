@@ -1,15 +1,10 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
     android:layout_height="match_parent" tools:context=".InitialActiviti"
+    android:background="@drawable/greyfloral_full_page" android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin" android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
     >
-
-    <ImageView
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
-        android:background="@drawable/greyfloral"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-        android:tileMode="mirror"/>
 
     <Button
         android:id="@+id/new_outfit_btn"
@@ -18,7 +13,11 @@
         android:text="@string/create"
         android:layout_centerVertical="true"
         android:layout_alignParentStart="true"
-        android:textSize="@dimen/text_button_size"/>
+        android:textSize="@dimen/text_button_size"
+        android:background="@drawable/drawable_custom_btn"
+        android:layout_marginBottom="10dp"
+        android:textColor="@color/text_init_btn"
+        android:onClick="createOutfit"/>
     <Button
         android:id="@+id/closet_btn"
         android:layout_height="150dp"
@@ -26,6 +25,9 @@
         android:text="@string/closet"
         android:layout_below="@id/new_outfit_btn"
         android:layout_centerHorizontal="true"
-        android:textSize="@dimen/text_button_size"/>
+        android:textSize="@dimen/text_button_size"
+        android:background="@drawable/drawable_custom_btn"
+        android:textColor="@color/text_init_btn"
+        android:onClick="openDesk"/>
 
 </RelativeLayout>

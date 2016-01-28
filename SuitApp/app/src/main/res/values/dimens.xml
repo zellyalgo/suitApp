@@ -3,4 +3,7 @@
     <dimen name="activity_horizontal_margin">16dp</dimen>
     <dimen name="activity_vertical_margin">16dp</dimen>
     <dimen name="text_button_size">40dp</dimen>
+    <dimen name="size_view_pager_pictures">-10dp</dimen>
+    <dimen name="viewpager_margin_fix_left">20dp</dimen>
+    <dimen name="viewpager_margin_fix_right">90dp</dimen>
 </resources>
