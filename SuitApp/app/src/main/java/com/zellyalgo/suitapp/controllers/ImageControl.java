@@ -8,11 +8,7 @@ import android.graphics.BitmapFactory;
  */
 public class ImageControl {
 
-    public static ImageControl createImageController (){
-
-    }
-
-    public Bitmap ShrinkBitmap(String file, int width, int height){
+    public Bitmap shrinkBitmap(String file, int width, int height){
 
         BitmapFactory.Options bmpFactoryOptions = new BitmapFactory.Options();
         bmpFactoryOptions.inJustDecodeBounds = true;
@@ -35,7 +31,7 @@ public class ImageControl {
         return getResizedBitmap(bitmap, width);
     }
 
-    public Bitmap getResizedBitmap(Bitmap image, int maxSize) {
+    private Bitmap getResizedBitmap(Bitmap image, int maxSize) {
         int width = image.getWidth();
         int height = image.getHeight();
 
