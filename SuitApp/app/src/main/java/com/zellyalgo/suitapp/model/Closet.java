@@ -7,7 +7,7 @@ import java.util.List;
  * Created by zellyalgo on 28/1/16.
  */
 public class Closet {
-    List<Outfit> outfitList;
+    private List<Outfit> outfitList;
 
     public Closet(){
         outfitList = new ArrayList<>();

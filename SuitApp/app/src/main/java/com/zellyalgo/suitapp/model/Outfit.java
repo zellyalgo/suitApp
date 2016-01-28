@@ -7,12 +7,12 @@ import java.util.List;
  */
 public class Outfit {
 
-    String name;
-    List<String> groups;
-    List<Picture> head;
-    List<Picture> chest;
-    List<Picture> legs;
-    List<Picture> feet;
+    private String name;
+    private List<String> groups;
+    private List<Picture> head;
+    private List<Picture> chest;
+    private List<Picture> legs;
+    private List<Picture> feet;
 
     public String getName() {
         return name;
