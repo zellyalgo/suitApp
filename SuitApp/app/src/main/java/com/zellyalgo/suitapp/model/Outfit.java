@@ -8,11 +8,20 @@ import java.util.List;
 public class Outfit {
 
     private String name;
+    private Long id;
     private List<String> groups;
     private List<Picture> head;
     private List<Picture> chest;
     private List<Picture> legs;
     private List<Picture> feet;
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
 
     public String getName() {
         return name;
@@ -70,6 +79,7 @@ public class Outfit {
         Outfit outfit = (Outfit) o;
 
         if (name != null ? !name.equals(outfit.name) : outfit.name != null) return false;
+        if (id != null ? !id.equals(outfit.id) : outfit.id != null) return false;
         if (groups != null ? !groups.equals(outfit.groups) : outfit.groups != null) return false;
         if (head != null ? !head.equals(outfit.head) : outfit.head != null) return false;
         if (chest != null ? !chest.equals(outfit.chest) : outfit.chest != null) return false;
@@ -81,6 +91,7 @@ public class Outfit {
     @Override
     public int hashCode() {
         int result = name != null ? name.hashCode() : 0;
+        result = 31 * result + (id != null ? id.hashCode() : 0);
         result = 31 * result + (groups != null ? groups.hashCode() : 0);
         result = 31 * result + (head != null ? head.hashCode() : 0);
         result = 31 * result + (chest != null ? chest.hashCode() : 0);
@@ -93,6 +104,7 @@ public class Outfit {
     public String toString() {
         return "Outfit{" +
                 "name='" + name + '\'' +
+                ", id=" + id +
                 ", groups=" + groups +
                 ", head=" + head +
                 ", chest=" + chest +
