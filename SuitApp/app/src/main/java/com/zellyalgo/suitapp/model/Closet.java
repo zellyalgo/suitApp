@@ -1,12 +1,13 @@
 package com.zellyalgo.suitapp.model;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
 /**
  * Created by zellyalgo on 28/1/16.
  */
-public class Closet {
+public class Closet implements Serializable{
     private List<Outfit> outfitList;
 
     public Closet(){

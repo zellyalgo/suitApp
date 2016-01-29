@@ -18,13 +18,11 @@ public class InitialActiviti extends AppCompatActivity {
     }
 
     public void createOutfit (View view){
-        Log.d(APP_TAG, "CREATEE");
         Intent intent = new Intent(this, CreateOutfit.class);
         startActivity(intent);
     }
 
     public void openDesk (View view){
-        Log.d(APP_TAG, "DESK");
         Intent intent = new Intent(this, CreateOutfit.class);
         startActivity(intent);
     }

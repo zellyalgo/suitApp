@@ -11,6 +11,7 @@ import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.zellyalgo.suitapp.controllers.FileAccess;
 import com.zellyalgo.suitapp.model.Picture;
 import com.zellyalgo.suitapp.pictureRow.RowViewPagerAdapter;
 
@@ -54,7 +55,6 @@ public class CreateOutfit extends AppCompatActivity {
     }
 
     public void newPicture (View view){
-
         switch (((ViewGroup)(view.getParent()).getParent()).getId()){
             case R.id.pager_head:
                 actualPagerAdapter = head;
@@ -73,23 +73,17 @@ public class CreateOutfit extends AppCompatActivity {
         }
 
         Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
-
-        Uri fileUri= getOutputMediaFileUri(numPhoto + ".jpg"); // create a file to save the image
-
-        intent.putExtra(MediaStore.EXTRA_OUTPUT, fileUri); // set the image file name
-
-        // start the image capture Intent
+        FileAccess fileAccess = new FileAccess();
+        Uri fileUri= fileAccess.getUriAppOfAFile(numPhoto + ".jpg");
+        intent.putExtra(MediaStore.EXTRA_OUTPUT, fileUri);
         startActivityForResult(intent, CAPTURE_IMAGE_ACTIVITY_REQUEST_CODE);
-
-        /*Intent intent = new Intent(android.provider.MediaStore.ACTION_IMAGE_CAPTURE);
-        startActivityForResult(intent,0);
-*/
     }
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         if(requestCode == CAPTURE_IMAGE_ACTIVITY_REQUEST_CODE){
-            Uri imagePath = getOutputMediaFileUri(numPhoto + ".jpg");
+            FileAccess fileAccess = new FileAccess();
+            Uri imagePath = fileAccess.getUriAppOfAFile(numPhoto + ".jpg");
             numPhoto++;
             Picture picture = new Picture();
             picture.setId(1L);
@@ -98,12 +92,4 @@ public class CreateOutfit extends AppCompatActivity {
             actualPagerAdapter.notifyDataSetChanged();
         }
     }
-
-    private Uri getOutputMediaFileUri(String fileName){
-        File externalFile = new File(Environment.getExternalStorageDirectory(), "SuitApp");
-        externalFile.mkdir();
-        File directory = new File(externalFile.getAbsolutePath(), fileName);
-        return Uri.fromFile(directory);
-    }
-
 }

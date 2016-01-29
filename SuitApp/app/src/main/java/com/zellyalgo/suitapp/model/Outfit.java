@@ -1,11 +1,12 @@
 package com.zellyalgo.suitapp.model;
 
+import java.io.Serializable;
 import java.util.List;
 
 /**
  * Created by zellyalgo on 28/1/16.
  */
-public class Outfit {
+public class Outfit implements Serializable {
 
     private String name;
     private Long id;

@@ -1,9 +1,11 @@
 package com.zellyalgo.suitapp.model;
 
+import java.io.Serializable;
+
 /**
  * Created by zellyalgo on 2/1/16.
  */
-public class Picture {
+public class Picture implements Serializable {
     private Long id;
     private String imageUri;
 
